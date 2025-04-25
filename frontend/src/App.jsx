@@ -14,19 +14,19 @@ const App = () => {
   }, []);
 
   const fetchBlogs = async () => {
-    const res = await axios.get('http://localhost:5000/api/blogs');
+    const res = await axios.get('https://blogapp-backend-w6ns.onrender.com/api/blogs');
     setBlogs(res.data);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post('http://localhost:5000/api/blogs', formData);
+    await axios.post('https://blogapp-backend-w6ns.onrender.com/api/blogs', formData);
     setFormData({ title: '', content: '' });
     fetchBlogs();
   };
 
   const deleteBlog = async (id) => {
-    await axios.delete(`http://localhost:5000/api/blogs/${id}`);
+    await axios.delete(`https://blogapp-backend-w6ns.onrender.com/api/blogs/${id}`);
     fetchBlogs();
   };
 
